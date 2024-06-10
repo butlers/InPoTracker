@@ -19,6 +19,8 @@ To do so:
 
 If you are not using vscode, or do not want to download the extension, you can still copy/paste each request in the file and use curl instead! 
 
+Each endpoint included in this repo is listed in this file with examples of its use case/how to call it directly.
+
 ## Executing Test Files
 Once you have installed all node modules run the following command to execute the test file:
 ```bash
