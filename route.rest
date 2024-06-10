@@ -1,0 +1,49 @@
+POST http://localhost:3000/insurance/generateFinanceTerms
+Content-Type: application/json
+
+{
+    "policies": [
+        {
+            "premium": 200,
+            "taxFee": 50,
+            "insuredName": "Sam Butler",
+            "policyName": "Policy A"
+        },
+        {
+            "premium": 300,
+            "taxFee": 50,
+            "insuredName": "Sam Butler",
+            "policyName": "Policy B"
+        }
+    ],
+    "dueDate": "2028-06-09T10:20:30Z"
+}
+
+###
+# Example to agree to terms for an insurance policy
+POST http://localhost:3000/insurance/agree-to-terms/66666c54e93036381a13b35e
+Content-Type: application/json
+
+###
+# Example 1: List all finance terms
+GET http://localhost:3000/insurance/finance-terms
+
+###
+# Example 2: Filter finance terms by downpayment greater than 100 and sort by downpayment in ascending order
+GET http://localhost:3000/insurance/finance-terms?downpaymentOperator=gt&downpaymentAmount=150&sortBy=downPayment&sortOrder=asc
+
+###
+# Example 3: Filter finance terms by status "Agreed" and sort by due date in descending order
+GET http://localhost:3000/insurance/finance-terms?status=AGREED
+
+###
+# Test sorting by downpayment amount in ascending order
+GET http://localhost:3000/insurance/finance-terms?sortBy=downPayment&order=asc
+
+###
+# Test sorting by due date in descending order
+GET http://localhost:3000/insurance/finance-terms?sortBy=dueDate&order=desc
+
+
+###
+DELETE http://localhost:3000/insurance/delete-all-finance-terms
